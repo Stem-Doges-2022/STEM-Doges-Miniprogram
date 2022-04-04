@@ -1,0 +1,34 @@
+<!--miniprogram/pages/index/index.wxml-->
+<image class="background" src="../../images/car.jpg">
+</image>
+<scroll-view scroll-y class="leaderboard">
+  <view class="leaderboardTop">
+    <text style="margin-left:10px">Name</text>
+    <text style="position:absolute; right:10px">Run Time</text>
+  </view>
+  <view wx:for="{{totalRanking}}" wx:for-item="user" wx:for-index="i"  class="userarea">
+    <view class="username" style="margin-top:{{i * 25 + 20}}px">{{i+1}}. {{user.name}} </view> 
+    <!-- <view class="bar" wx:if="{{i!=0}}" style="margin-top:{{i * 25 + 5}}px"></view> -->
+    <view class="userpoints" style="margin-top:{{i * 25 + 20}}px">{{user.runTime}}</view>
+    <view bindtap="removePerson" data-num="{{i}}" style="right:3px; position:absolute; color:white;margin-top:{{i * 25 + 20}}px" wx:if="{{admin}}">X</view>
+  </view>
+</scroll-view>
+<view  class="username"   style="width:100%;text-align:center" bindtap="openAddUser">add score</view>
+
+<view wx:if="{{showAddUser}}" class="overlay" bindtap="hidePopup"></view>
+<view wx:if="{{showAddUser}}" class="popup mini">
+  <form bindsubmit="addPerson" class="answerInputBox">
+    <input  style="margin-top:40%" id="inputAnswer" class="inputArea" placeholder="Name" name="name" />
+    <input  id="inputAnswer" class="inputArea" placeholder="Run Time" name="runTime" />
+    <button class="submit" style="position:absolute;bottom:0px;width:40%;left:30%" form-type="submit" >submit</button>
+  </form>
+</view>
+
+
+<view wx:if="{{showAdminVerification}}" class="overlay" bindtap="hidePopup"></view>
+<view wx:if="{{showAdminVerification}}" class="popup mini">
+  <form bindsubmit="verifyAdmin" class="answerInputBox">
+    <input  style="margin-top:40%" id="inputAnswer" class="inputArea" placeholder="code" name="code" />
+    <button class="submit" style="position:absolute;bottom:0px;width:40%;left:30%" form-type="submit" >submit</button>
+  </form>
+</view>
