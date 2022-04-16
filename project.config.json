@@ -27,7 +27,6 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "enableEngineNative": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
@@ -36,10 +35,10 @@
     "packNpmRelationList": [],
     "minifyWXSS": true
   },
-  "appid": "wxad6a5665b92cb738",
-  "projectname": "Alan%20Amazing%20App",
+  "projectname": "%E7%90%86%E5%B7%A5%E7%8B%97",
   "libVersion": "2.14.1",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "appid": "wx75f99a2b335e85a9",
   "condition": {
     "search": {
       "list": []
